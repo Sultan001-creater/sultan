@@ -16,15 +16,27 @@ if(is_numeric($paraRestultId)){
     if(file_exists($deleteImage)){
       unlink($deleteImage);
     }
-    redirect('products.php','Product Deleted Successfully');
+    alert('success','Product Deleted Successfully');
+    header('Location:products.php');
+    die();
+   // redirect('products.php','Product Deleted Successfully');
  }else{
-    redirect('products.php','Something Went Wrong!');
+   alert('danger','Something went wrong!');
+    header('Location:products.php');
+    die();
+   // redirect('products.php','Something Went Wrong!');
  }
 }else{
-    redirect('products.php',$product['message']);
+   alert('info',$product['message']);
+    header('Location:products.php');
+    die();
+   // redirect('products.php',$product['message']);
 }
 }else
 {
-   redirect('products.php','Something Went Wrong!');
+   alert('danger','Something went wrong!');
+    header('Location:products.php');
+    die();
+   //redirect('products.php','Something Went Wrong!');
 }
 ?>

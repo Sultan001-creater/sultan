@@ -10,6 +10,18 @@
     </div>
     <div class="card-body">
         <?php// alertMessage(); ?>
+        <?php 
+        if(isset($_SESSION['alert'])){
+      ?>
+
+        <div class="container pt-3">
+        <div class="alert alert-<?= $_SESSION['alert']['type']?>">
+          <?= $_SESSION['alert']['message']?>
+        </div>
+      </div>
+
+      <?php unset($_SESSION['alert']);
+    } ?>
        <form action="code.php" method="POST">
 
        <?php
@@ -60,7 +72,7 @@
        </div>
         <div class="col-md-6 mb-3">
       <label ><b>Select Position</b><span style="color:red;">*</span></label>
-      <select name="position" class="form-select myselect2">
+      <select name="positions" class="form-select myselect2">
         <option value="">---Select Position--- </option>
         <?php 
         $positions = getAll('positions');
@@ -71,7 +83,7 @@
                     ?>
                     <option
                         value="<?= $posiItem['name'];?>"
-                        <?= $adminData['data']['position'] == $posiItem['id'] ? 'selected':'';?>>
+                        <?= $adminData['data']['positions'] == $posiItem['id'] ? 'selected':'';?>>
                         <?= $posiItem['name'] ?>
                     </option>
                     <?php

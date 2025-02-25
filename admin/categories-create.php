@@ -8,7 +8,19 @@
 </h2>
     </div>
     <div class="card-body">
-        <?php alertMessage(); ?>
+        <?php //alertMessage(); ?>
+        <?php 
+        if(isset($_SESSION['alert'])){
+      ?>
+
+        <div class="container pt-3">
+        <div class="alert alert-<?= $_SESSION['alert']['type']?>">
+          <?= $_SESSION['alert']['message']?>
+        </div>
+      </div>
+
+      <?php unset($_SESSION['alert']);
+    } ?>
        <form action="code.php" method="POST">
     <div class="row">
        <div class="col-md-12 mb-3">

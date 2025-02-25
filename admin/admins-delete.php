@@ -11,21 +11,33 @@ if(is_numeric($paraRestultId)){
         $adminDeleteRes = delete('admins', $adminId);
         if($adminDeleteRes)
         {
-            redirect('admins.php','Admin deleted Successfully');
+            alert('success','Admin deleted Successfully');
+   header('Location:admins.php');
+   die();
+           // redirect('admins.php','Admin deleted Successfully');
 
         }
         else
         {
-            redirect('admins.php','Something Went Wrong!');
+            alert('danger','Something Went Wrong!');
+            header('Location:admins.php');
+            die();
+           // redirect('admins.php','Something Went Wrong!');
 
         }
     }else
     {
-        redirect('admins.php',$admin['message']); 
+        alert('info',$admin['message']);
+            header('Location:admins.php');
+            die();
+      //  redirect('admins.php',$admin['message']); 
     }
     //echo $adminId;
 
 }else{
-    redirect('admins.php','Something Went Wrong!');
+    alert('danger','Something Went Wrong!');
+            header('Location:admins.php');
+            die();
+   // redirect('admins.php','Something Went Wrong!');
 }
 ?>

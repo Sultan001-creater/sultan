@@ -10,19 +10,31 @@ if(is_numeric($paraRestultId)){
         $response = delete('category',$categoryId);
         if($response)
         {
-            redirect('categories.php','Category deleted Successfully');
+            alert('success','Category deleted Successfully');
+            header('Location:categories.php');
+            die();
+           // redirect('categories.php','Category deleted Successfully');
 
         }
         else{
-            redirect('categories.php','Something went wrong.');
+            alert('danger','Something Went Wrong!');
+            header('Location:categories.php');
+            die();
+           // redirect('categories.php','Something went wrong.');
         }
     }
     else
     {
-        redirect('categories.php',$category['message']);
+        alert('info',$category['message']);
+        header('Location:categories.php');
+        die();
+        //redirect('categories.php',$category['message']);
     }
     //echo $adminId;
 }else{
-    redirect('categories.php','Something went wrong.');
+    alert('info','Something went wrong.');
+    header('Location:categories.php');
+    die();
+    //redirect('categories.php','Something went wrong.');
 }
 ?>

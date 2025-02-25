@@ -6,7 +6,10 @@
 
                             <div class="text-muted"style="color:gray;"><b>&copy; NOT Limited |Rush Truck Software - <?= date('20y'); ?></b> </div>
                             
-                           
+                           <div class="text-end">
+                            
+                            <img src="assets/img/not back word.png" width="80px" alt="Rush-Track">
+                           </div>
                             
                         </div>
                     </div>

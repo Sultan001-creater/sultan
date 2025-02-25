@@ -11,21 +11,33 @@ if(is_numeric($paraRestultId)){
         $supplierDeleteRes = delete('suppliers', $supplierId);
         if($supplierDeleteRes)
         {
-            redirect('suppliers.php','Supplier deleted Successfully');
+            alert('success','Supplier deleted Successfully');
+    header('Location:suppliers.php');
+    die();
+          //  redirect('suppliers.php','Supplier deleted Successfully');
 
         }
         else
         {
-            redirect('suppliers.php','Something Went Wrong!');
+            alert('danger','Something went wrong!');
+    header('Location:suppliers.php');
+    die();
+         //   redirect('suppliers.php','Something Went Wrong!');
 
         }
     }else
     {
-        redirect('suppliers.php',$supplier['message']); 
+        alert('info',$supplier['message']);
+    header('Location:suppliers.php');
+    die();
+      //  redirect('suppliers.php',$supplier['message']); 
     }
     //echo $supplierId;
 
 }else{
-    redirect('suppliers.php','Something Went Wrong!');
+    alert('danger','Something went wrong!');
+    header('Location:suppliers.php');
+    die();
+   // redirect('suppliers.php','Something Went Wrong!');
 }
 ?>

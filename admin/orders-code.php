@@ -21,7 +21,10 @@ if(isset($_POST['addItem']))
         if(mysqli_num_rows($checkProduct) > 0){
             $row = mysqli_fetch_assoc($checkProduct);
             if($row['quantity'] < $quantity){
-                redirect('orders-create.php','Only'. $row ['quantity']. $row['name'].' available In Store!'); 
+                alert('info','Only' .$row ['quantity'] .$row['name'].' available In Store!');
+                header('Location:orders-create.php');
+                die();
+                //redirect('orders-create.php','Only'. $row ['quantity']. $row['name'].' available In Store!'); 
             }
 
             $productData =[
@@ -63,13 +66,21 @@ if(isset($_POST['addItem']))
             }
             
 
-
-            redirect('orders-create.php',$row ['name']. ' Added  To Cart '); 
+            alert('info',$row ['name']. ' Added  To Cart ');
+            header('Location:orders-create.php');
+            die();
+            //redirect('orders-create.php',$row ['name']. ' Added  To Cart '); 
         }else{
-            redirect('orders-create.php',$row ['name']. ' Added To Cart '); 
+            alert('info',$row ['name']. ' Added  To Cart ');
+            header('Location:orders-create.php');
+            die();
+           // redirect('orders-create.php',$row ['name']. ' Added To Cart '); 
         }
     }else{
-        redirect('orders-create.php','Something Went Wrong!');
+        alert('info','Something Went Wrong!');
+            header('Location:orders-create.php');
+            die();
+       // redirect('orders-create.php','Something Went Wrong!');
     }
 }
 

@@ -11,21 +11,33 @@ if(is_numeric($paraRestultId)){
         $customerDeleteRes = delete('customers', $customerId);
         if($customerDeleteRes)
         {
-            redirect('customers.php','Admin deleted Successfully');
+            alert('success','Admin deleted Successfully');
+        header('Location:customers.php');
+        die();
+           // redirect('customers.php','Admin deleted Successfully');
 
         }
         else
         {
+            alert('danger','Something Went Wrong!');
+        header('Location:customers.php');
+        die();
             redirect('customers.php','Something Went Wrong!');
 
         }
     }else
     {
-        redirect('customers.php',$customer['message']); 
+        alert('info',$customer['message']);
+        header('Location:customers.php');
+        die();
+       // redirect('customers.php',$customer['message']); 
     }
     //echo $adminId;
 
 }else{
+    alert('danger','Something Went Wrong!');
+    header('Location:customers.php');
+    die();
     redirect('customers.php','Something Went Wrong!');
 }
 ?>

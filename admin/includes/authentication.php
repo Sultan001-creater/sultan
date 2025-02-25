@@ -9,19 +9,28 @@ if(isset($_SESSION['loggedIn']))
     if(mysqli_num_rows($result) == 0)
     {
         logoutSession();
-        redirect('../login.php','Access Denied!');
+        alert('danger','Access Denied!');
+        header('Location:login.php');
+        die();
+        //redirect('../login.php','Access Denied!');
     }
     else
     {
         $row = mysqli_fetch_assoc($result);
         if($row['is_ban'] == 1){
             logoutSession();
+            alert('danger','Your account has been banned!');
+            header('Location:../login.php');
+            die();
             redirect('../login.php','Your account has been banned!');
         }
     }
 }
 else
 {
+    alert('danger','Login to continue...');
+    header('Location:../login.php');
+    die();
     redirect('../login.php','Login to continue...');
 }
 ?>

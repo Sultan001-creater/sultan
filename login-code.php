@@ -17,11 +17,17 @@ if(isset($_POST['loginBtn']))
                 $hashedpassword = $row['password'];
 
                 if(!password_verify($password,$hashedpassword)){
-                    redirect('login.php','Incorrect password!');
+                    alert('danger','Incorrect password!');
+                    header('Location:login.php');
+                    die();
+                    //redirect('login.php','Incorrect password!');
                 }
                 
                 if($row['is_ban'] == 1){
-                    redirect('login.php','Your account has been banned.Please Contact Your Admin!');
+                    alert('danger','Your account has been banned.Please Contact Your Admin!');
+                    header('Location:login.php');
+                    die();
+                   // redirect('login.php','Your account has been banned.Please Contact Your Admin!');
                 }
 
                 $_SESSION['loggedIn'] = true;
@@ -33,18 +39,30 @@ if(isset($_POST['loginBtn']))
                     'phone' => $row[''],
 
                 ];
-                redirect('admin/index.php','Logged in Successfully');
+                alert('success','Logged in successfully');
+                header('Location:admin/index.php');
+                die();
+               // redirect('admin/index.php','Logged in Successfully');
             }else{
-                redirect('login.php','Invalid Username!');
+                alert('danger','invalid username!');
+                header('Location:login.php');
+                die();
+                //redirect('login.php','Invalid Username!');
             }
 
         }else{
-            redirect('login.php','Something went Wrong!');
+            alert('danger','Something went Wrong!');
+            header('Location:login.php');
+            die();
+           // redirect('login.php','Something went Wrong!');
         }
     }
     else
     {
-        redirect('login.php','All fields are Mandatory!');
+        alert('danger','All fields are Mandatory!');
+        header('Location:login.php');
+        die();
+        //redirect('login.php','All fields are Mandatory!');
     }
 }
 ?>

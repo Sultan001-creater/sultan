@@ -41,6 +41,18 @@ if(!isset($_SESSION['productItems'])){
                 </div>
                 <div class="card-body">
                     <?php// alertMessage(); ?>
+                    <?php 
+        if(isset($_SESSION['alert'])){
+      ?>
+
+        <div class="container pt-3">
+        <div class="alert alert-<?= $_SESSION['alert']['type']?>">
+          <?= $_SESSION['alert']['message']?>
+        </div>
+      </div>
+
+      <?php unset($_SESSION['alert']);
+    } ?>
                     <div id="myBillingArea">
                     <?php
                     if(isset($_SESSION['cphone']))

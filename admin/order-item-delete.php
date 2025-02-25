@@ -7,12 +7,21 @@ if(is_numeric($paramResult)){
     
     unset($_SESSION['productItems'][$indexValue]);
     unset($_SESSION['productItemIds'][$indexValue]);
-    
-    redirect('orders-create.php',' Item Removed From Cart');
+
+    alert('danger','Item Removed From Cart');
+    header('Location:orders-create.php');
+    die();
+    //redirect('orders-create.php',' Item Removed From Cart');
  }else{
-    redirect('orders-create.php','There is no Item');
+   alert('danger','There is no Item');
+   header('Location:orders-create.php');
+   die();
+   // redirect('orders-create.php','There is no Item');
  }
 }else{
-    redirect('orders-create.php','Param Not numeric');
+   alert('danger','Param Not numeric');
+   header('Location:orders-create.php');
+   die();
+    //redirect('orders-create.php','Param Not numeric');
 }
 ?>

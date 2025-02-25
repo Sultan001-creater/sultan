@@ -10,19 +10,31 @@ if(is_numeric($paraRestultId)){
         $response = delete('positions',$positionId);
         if($response)
         {
-            redirect('positions.php','Position deleted Successfully');
+            alert('success','Position deleted Successfully');
+            header('Location:positions.php');
+            die();
+           // redirect('positions.php','Position deleted Successfully');
 
         }
         else{
-            redirect('positions.php','Something went wrong.');
+            alert('danger','Something Went Wrong!');
+            header('Location:positions.php');
+            die();
+           // redirect('positions.php','Something went wrong.');
         }
     }
     else
     {
-        redirect('positions.php',$position['message']);
+        alert('info',$position['message']);
+        header('Location:positions.php');
+        die();
+       // redirect('positions.php',$position['message']);
     }
     //echo $adminId;
 }else{
-    redirect('positions.php','Something went wrong.');
+    alert('danger','Something went wrong!');
+    header('Location:positions.php');
+    die();
+    //redirect('positions.php','Something went wrong.');
 }
 ?>

@@ -24,5 +24,8 @@
                         <li><a class="dropdown-item" href="../logout.php"><i style="color:orangered;"  class="fas fa-sign-out"></i> Logout</a></li>
                     </ul>
                 </li>
+
             </ul>
+           
         </nav>
+       

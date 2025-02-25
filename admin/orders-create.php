@@ -51,43 +51,23 @@
 </h2>
     </div>
     <div class="card-body ">
-    <ol class="breadcrumb mb-1">
-                            <li class="breadcrumb-item active">OUR PARTNERS</li>
-                        </ol>
-    <div class="row ">
-                       <!--<div class="card card-body shadow border-1 mb-4">-->
-                       <table class="table table-bordered shadow ">
-                        <tbody>
-                            <tr>
-                       <td>
-                        <h4 style="font-size:23px; line-height:30px; margin-right:20px; padding:0;margin-top:0.5rem;"><img src="assets/img/rush back orange.png" width="140px"></img></h4>
-                        
-                        </td>
-                        <td>
-                        <h4 style="font-size:23px; line-height:30px; margin:2px; padding:0;margin-top:0.5rem;"><img src="assets/img/sultan1.png" width="150px"></img></h4>
-                       
-                        </td>
-                        <td>
-                        <h4 style="font-size:23px; line-height:30px; margin:2px; padding:0;margin-top:0.5rem;"><img src="assets/img/not1.png" width="150px"></img></h4>
-                        
-                        </td>
-                        <td>
-                        <h4 style="font-size:23px; line-height:30px; margin:2px; padding:0;margin-top:0.5rem;"><img src="assets/img/four1.png" width="150px"></img></h4>
-                       
-                        </td>
-                        <td>
-                        <h4 style="font-size:23px; line-height:30px; margin:2px; padding:0;margin-top:0.5rem;"><img src="assets/img/tosscoin (s)c.png" width="150px"></img></h4>
-                        
-                        </td>
-                       
-
-                    </tr>
-                    </tbody>
-                    </table>
-                       
+    
+    
                        <!-- </div>-->
-                        </div>
-    <?php alertMessage(); ?>
+                       <!-- alert-->
+         <?php 
+        if(isset($_SESSION['alert'])){
+      ?>
+
+        <div class="container pt-3">
+        <div class="alert alert-<?= $_SESSION['alert']['type']?>">
+          <?= $_SESSION['alert']['message']?>
+        </div>
+      </div>
+
+      <?php unset($_SESSION['alert']);
+    } ?>
+      
        <form action="orders-code.php" method="POST">
     <div class="row">
        <div class="col-md-4 mb-3">

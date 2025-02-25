@@ -1,11 +1,23 @@
 
 <?php include('includes/header.php');?>
 <div class="container-fluid px-4">
+<?php 
+        if(isset($_SESSION['alert'])){
+      ?>
+
+        <div class="container pt-3">
+        <div class="alert alert-<?= $_SESSION['alert']['type']?>">
+          <?= $_SESSION['alert']['message']?>
+        </div>
+      </div>
+
+      <?php unset($_SESSION['alert']);
+    } ?>
                         <h1 class="mt-4"style="color:orangered;"><i style="color:#C62300;" class="fas fa-dashboard"></i><b> Dashboard</b></h1>
                         <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item active ">OUR PARTNERS</li>
                         </ol>
-                       <!-- <div class="row "style="text-decoration: none;">-->
+                        <div class="row "style="text-decoration: none;">
                        <div class="row ">
                        <!--<div class="card card-body shadow border-1 mb-4">-->
                        <table class="table table-bordered shadow ">
