@@ -33,6 +33,7 @@
   </div>
 </nav>
 
+<!--Alert-->
 <?php 
         if(isset($_SESSION['alert'])){
       ?>

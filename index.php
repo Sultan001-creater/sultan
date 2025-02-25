@@ -1,7 +1,12 @@
 <?php include('includes/header.php');?>
+ 
     <div class="py-5"style="background-image:url('admin/assets/img/RMS3.jpg');background-size:cover; background-repeat:no-repeat; background-color:dark;">
-    
+   
+
+
+
         <div class="container my-5">
+           
             <div class="row justify-content-center">
                 <div class="col-md-5 py-5 text-center">
                

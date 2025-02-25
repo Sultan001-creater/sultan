@@ -37,7 +37,7 @@ if(isset($_SESSION['loggedIn'])){
                                 <button type="submit" name="loginBtn" class="btn  w-100 mt-1" style="background:orangered;color:white;transform:orange"><i class="fa fa-sign-in" aria-hidden="true"></i><b> LOGIN</b></button>
                                 
                             </div>
-                            <p>Don't have an Account <a href="signup.php">Register Here.</a></p>
+                            <p>Don't have an Account <a href="signup.php">Signup.</a></p>
 
                         </form>
                     </div>
