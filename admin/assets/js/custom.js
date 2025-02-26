@@ -205,7 +205,7 @@ function printMyBillingArea() {
 
     var divContents = document.getElementById("myBillingArea").innerHTML;
     var a = window.open('', '', 'heigt=600,width=800');
-    a.document.write('<html><title>SULTAN  (POS) SYSTEM</title>');
+    a.document.write('<html><title>RUSH-Track Retail Management System(R.M.S)</title>');
     a.document.write('<body style="font-family: fangsong;">');
     a.document.write(divContents);
     a.document.write('</body></html>');

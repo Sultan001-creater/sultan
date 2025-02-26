@@ -23,6 +23,7 @@ if(isset($_POST['loginBtn']))
                     //redirect('login.php','Incorrect password!');
                 }
                 
+                
                 if($row['is_ban'] == 1){
                     alert('danger','Your account has been banned.Please Contact Your Admin!');
                     header('Location:login.php');

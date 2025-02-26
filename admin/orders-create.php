@@ -210,6 +210,7 @@
                     <div class="col-md-3">
                     <label ><b>Enter Customer Phone No </b><span style="color:orangered;">*</span></label>
                     <input type="number" id="cphone" class="form-control" value="" placeholder="Enter Phone No:"/>
+                    
                     </div>
                    
                     <div class="col-md-3 mb-3">

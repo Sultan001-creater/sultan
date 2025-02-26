@@ -111,6 +111,7 @@ if(isset($_POST['proceedToPlaceBtn']))
     
     
     //checking for customer
+   
     $checkCustomer = mysqli_query($conn, "SELECT * FROM customers WHERE phone ='$phone' LIMIT 1");
     if($checkCustomer){
         if(mysqli_num_rows($checkCustomer) > 0)  
@@ -128,6 +129,7 @@ if(isset($_POST['proceedToPlaceBtn']))
         else
         {
             $_SESSION['cphone'] = $phone;
+            
             jsonResponse(404,'warning','Customer Not found!');
         }
 
